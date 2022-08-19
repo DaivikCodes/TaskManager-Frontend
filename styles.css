@@ -123,11 +123,21 @@ nav .add-task{
 /* ---------------------------------------- Task Area CSS  ---------------------------------------- */
 
 .container{
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 2.5rem auto;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.container .container-heading{
+    text-align: center;
+    font-weight: 400;
 }
 
 .task-container{
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
