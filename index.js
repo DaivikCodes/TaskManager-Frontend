@@ -4,22 +4,22 @@
 let state = {
     tasks : {
         1: {
-            url:"images/default_task.jpg",
-            title:"Title",
-            desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia necessitatibus voluptatum asperiores amet molestias molestiae id sed nesciunt obcaecati harum. Rem porro molestias consectetur dolorem temporibus adipisci unde obcaecati ex aliquam quidem, reiciendis enim corporis perferendis placeat quis voluptas iure maiores deserunt debitis at maxime? Magni veritatis ducimus quae molestiae!",
+            url:"https://cdn-images.win.gg/resize/w/1000/format/webp/type/progressive/fit/cover/path/wp/uploads/2021/12/Valorants-new-Agent-is-a-weapon-designer-named-Chamber.webp",
+            title:"Play Valorant",
+            desc:"Custom Image",
             tag: "daily",
         },
         2: {
             url:"images/default_task.jpg",
-            title:"Title",
+            title:"Default Image",
             desc:"Lorem ipsum dolor sit",
-            tag: "special",
+            tag: "important",
         },
         3: {
-            url:"images/default_task.jpg",
-            title:"Lorem",
-            desc:"test description",
-            tag: "important",
+            url:"https://img.wallpapersafari.com/desktop/728/410/10/38/DBdymp.jpg",
+            title:"Watch Anime",
+            desc:"Lorem ipsum dolor sit",
+            tag: "special",
         },
     },
 };
