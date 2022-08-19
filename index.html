@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasky: Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js" async></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-container">
+                <a href="#">Tasky</a>
+                <a href="#">Home</a>
+            </div>
+            <div class="add-task" onclick="openTaskForm()">
+                <i class="fas fa-plus"></i>
+                <p>Add Task</p>
+            </div>
+        </nav>
+    </header>
+    <div class="search-bar">
+        <div class="inputs">
+            <input type="search" name="search" id="" placeholder="Search Task" oninput="searchTask(this)">
+            <button onclick="searchTask(this, true)"><i class="fab fa-sistrix"></i></button>
+        </div>
+    </div>
+    <section class="container">
+        <h2 class="container-heading">Your Tasks:</h2>
+        <div class="task-container">
+        </div>
+    </section>
+
+    <section class="add-task-modal-close" id="add-task-modal">
+        <div class="task-form">
+            <div class="title-bar">
+                <h2>Create task</h2>
+                <i class="fas fa-xmark" onclick="closeTaskForm()"></i>
+            </div>
+            <form action="#">
+                <div class="input-field">
+                    <label for="url">Image:</label>
+                    <input type="text" id="url" placeholder="https://www.example.com/img.png">
+                </div>
+                <div class="input-field">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" placeholder="Task title" required>                    
+                </div>
+                <div class="input-field">
+                    <label for="desc">Description:</label>
+                    <textarea name="" id="desc" cols="30" rows="2" placeholder="Task description" required></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="ttype">Task type:</label>
+                    <div class="radio-options">
+                        <div>                            
+                            <input type="radio" name="ttype" id="daily" required>
+                            <label for="daily">daily</label>
+                        </div>
+                        <div>                            
+                            <input type="radio" name="ttype" id="special">
+                            <label for="special">special</label>
+                        </div>
+                        <div>                            
+                            <input type="radio" name="ttype" id="important">
+                            <label for="important">important</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="cancel" onclick="clearNewTaskForm()">cancel</button>
+                    <button class="submit-button" onclick="createNewTask(this)">Create</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="view-task-modal-close" id="view-task-modal">
+        <div class="task-form" name="">
+            <div class="title-bar">
+                <h2>Task</h2>
+                <div class="buttons">
+                    <i class="fas fa-trash" onclick="deleteTask(this)" id="delete"></i>
+                    <i class="fas fa-pen" onclick="editViewForm()" id="edit"></i>
+                    <i class="fas fa-xmark" onclick="closeViewForm()" id="close"></i>
+                </div>
+            </div>
+            <form action="#">
+                <div class="input-field">
+                    <label for="url">Image:</label>
+                    <input type="text" id="url" placeholder="https://www.example.com/img.png" disabled>
+                </div>
+                <div class="input-field">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" placeholder="Task title" required disabled>                    
+                </div>
+                <div class="input-field">
+                    <label for="desc">Description:</label>
+                    <textarea name="" id="desc" cols="30" rows="2" placeholder="Task description" required disabled></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="ttype">Task type:</label>
+                    <div class="radio-options">
+                        <div>                            
+                            <input type="radio" name="ttype" id="ed-daily" required disabled>
+                            <label for="ed-daily">Daily</label>
+                        </div>
+                        <div>                            
+                            <input type="radio" name="ttype" id="ed-special" disabled>
+                            <label for="ed-special">Special</label>
+                        </div>
+                        <div>                            
+                            <input type="radio" name="ttype" id="ed-important" disabled>
+                            <label for="ed-important">Important</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="cancel" onclick="cancelChanges()" disabled>cancel</button>
+                    <button class="save-button" onclick="editChanges()" disabled>Save</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
