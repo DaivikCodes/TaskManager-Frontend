@@ -42,7 +42,7 @@
                 <h2>Create task</h2>
                 <i class="fas fa-xmark" onclick="closeTaskForm()"></i>
             </div>
-            <form action="#">
+            <form onsubmit="return false">
                 <div class="input-field">
                     <label for="url">Image:</label>
                     <input type="text" id="url" placeholder="https://www.example.com/img.png">
@@ -90,7 +90,7 @@
                     <i class="fas fa-xmark" onclick="closeViewForm()" id="close"></i>
                 </div>
             </div>
-            <form action="#">
+            <form onsubmit="return false">
                 <div class="input-field">
                     <label for="url">Image:</label>
                     <input type="text" id="url" placeholder="https://www.example.com/img.png" disabled>
