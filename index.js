@@ -244,7 +244,7 @@ function cancelChanges(){
     }
 }
 
-function editChanges(){
+function saveChanges(){
     // making final confirmation from the user, before writing the changes in secondary/permanent storage
     if( confirm("Do you want to save changes?") === true ){
 
@@ -264,7 +264,6 @@ function editChanges(){
 
         // Calling the updateState to write changes to storage
         // console.log(currentTask);
-        closeTaskForm();
         updateState(currentTask,stateTypes["task"]);
 
 
