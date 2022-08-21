@@ -642,7 +642,37 @@ nav .add-task{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 1.5rem;
     justify-content: center;
+}
+.goals{
+    height: 140px;
+    width: 400px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0,0.1),
+                -2px -2px 5px rgba(255, 255, 255, 1);
+}
+.goals .content .created{
+    font-weight: 300;
+}
+.goals .content .deadline{
+    font-weight: 450;
+}
+.goals .progress{
+    height: 80px;
+    width: 80px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.goals .progress .value{
+    font-weight: 600;
+    color: white;
 }
