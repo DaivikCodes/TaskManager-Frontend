@@ -44,16 +44,16 @@
             </div>
             <form onsubmit="return false">
                 <div class="input-field">
-                    <label for="url">Image:</label>
-                    <input type="text" id="url" placeholder="https://www.example.com/img.png">
+                    <label for="task-url">Image:</label>
+                    <input type="text" id="task-url" placeholder="https://www.example.com/img.png">
                 </div>
                 <div class="input-field">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" placeholder="Task title" required>                    
+                    <label for="task-title">Title:</label>
+                    <input type="text" id="task-title" placeholder="Task title" required maxlength="40">                    
                 </div>
                 <div class="input-field">
-                    <label for="desc">Description:</label>
-                    <textarea name="" id="desc" cols="30" rows="2" placeholder="Task description" required></textarea>
+                    <label for="task-desc">Description:</label>
+                    <textarea name="" id="task-desc" cols="30" rows="2" placeholder="Task description" required></textarea>
                 </div>
                 <div class="input-field">
                     <label>Task type:</label>
@@ -125,6 +125,13 @@
                     <button class="save-button" onclick="saveChanges()" disabled>Save</button>
                 </div>
             </form>
+        </div>
+    </section>
+
+    <section class="container goals-section">
+        <h1 class="container-heading">Your goals</h1>
+        <div class="goal-container">
+
         </div>
     </section>
 </body>

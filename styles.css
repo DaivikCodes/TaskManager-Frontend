@@ -185,15 +185,17 @@ nav .add-task{
     z-index: 5;
     font-size: 1rem;
     padding: 5px 10px;
-    max-height: 10rem;
     height: fit-content;
 }
 
 .task .content h2{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    max-height: 5rem;
+    max-height: 3.5rem;
     height: fit-content;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
     word-wrap: break-word;
 }
 .task .content p{
@@ -282,7 +284,7 @@ nav .add-task{
     }
 }
 
-/* ---------------------------------------- Task Area CSS  ---------------------------------------- */
+/* ---------------------------------------- Create Task CSS  ---------------------------------------- */
 
 .add-task-modal{
     position: fixed;
@@ -632,4 +634,15 @@ nav .add-task{
     .view-task-modal .task-form .input-field .radio-options{
         padding-left: 30px;
     }
+}
+
+/* ---------------------------------------- Goals Task CSS  ---------------------------------------- */
+
+.goal-container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
 }

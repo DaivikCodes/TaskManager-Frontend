@@ -129,6 +129,20 @@ function createNewTask(e){
         }
     }
 
+    // data integrity check:
+    if( !newTask.title){
+        alert("Title field cannot be empty");
+        return false;
+    }
+    if(!newTask.desc){
+        alert("Description field cannot be empty");
+        return false;
+    }
+    if(!newTask.tag){
+        alert("Tag field cannot be empty");
+        return false;
+    }
+
     // adding the task to state.tasks and updating the secondary storage
     updateState(newTask, stateTypes["task"]);
 
@@ -260,6 +274,20 @@ function saveChanges(){
             if( form.children[3].children[1].children[i].children[0].checked === true){
                 currentTask.tag = form.children[3].children[1].children[i].children[0].id.split("-")[1].toLowerCase();
             }
+        }
+
+        // data integrity check:
+        if( !currentTask.title){
+            alert("Title field cannot be empty");
+            return false;
+        }
+        if(!currentTask.desc){
+            alert("Description field cannot be empty");
+            return false;
+        }
+        if(!currentTask.tag){
+            alert("Tag field cannot be empty");
+            return false;
         }
 
         // Calling the updateState to write changes to storage
