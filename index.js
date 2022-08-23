@@ -406,6 +406,13 @@ goals.forEach((ele,ind) =>{
     waves.forEach((ele)=>{
         ele.style.bottom = "calc("+percent+"% - 10px)";
     })
+
+    if(Number(percent)>60){
+        goalsProgress.children[3].className = "value50";
+    }
+    else{
+        goalsProgress.children[3].className = "value";
+    }
 })
 
 //================================= Script Starts here =================================
