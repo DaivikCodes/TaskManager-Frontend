@@ -393,6 +393,27 @@ function searchTask(e){
     }
 }
 
+//================================= Goals animation here =================================
+
+let goals = document.querySelectorAll(".goals")
+goals.forEach((ele,ind) =>{
+    let goalsProgress = ele.children[1].children[0];
+    let percent = goalsProgress.children[3].textContent;
+    let fill = goalsProgress.children[0];
+    fill.style.height = "calc("+percent+"% - 10px)";
+    
+    let waves = ele.querySelectorAll(".wave");
+    waves.forEach((ele)=>{
+        ele.style.bottom = "calc("+percent+"% - 10px)";
+    })
+
+    if(Number(percent)>60){
+        goalsProgress.children[3].className = "value50";
+    }
+    else{
+        goalsProgress.children[3].className = "value";
+    }
+})
 
 //================================= Script Starts here =================================
 
