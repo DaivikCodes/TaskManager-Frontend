@@ -18,9 +18,15 @@
                 <a href="#">Tasky</a>
                 <a href="#">Home</a>
             </div>
-            <div class="add-task" onclick="openTaskForm()">
-                <i class="fas fa-plus"></i>
-                <p>Add Task</p>
+            <div class="create-form-buttons">                
+                <div class="add-task" onclick="openTaskForm()">
+                    <i class="fas fa-plus"></i>
+                    <p>Add Task</p>
+                </div>
+                <div class="add-goal" onclick="openGoalForm()">
+                    <i class="fas fa-plus"></i>
+                    <p>Add Goal</p>
+                </div>
             </div>
         </nav>
     </header>
@@ -85,9 +91,9 @@
             <div class="title-bar">
                 <h2>Task</h2>
                 <div class="buttons">
-                    <i class="fas fa-trash" onclick="deleteTask(this)" id="delete"></i>
-                    <i class="fas fa-pen" onclick="editViewForm()" id="edit"></i>
-                    <i class="fas fa-xmark" onclick="closeViewForm()" id="close"></i>
+                    <i class="fas fa-trash delete" onclick="deleteTask(this)"></i>
+                    <i class="fas fa-pen edit" onclick="editTaskViewForm()"></i>
+                    <i class="fas fa-xmark close" onclick="closeTaskViewForm()"></i>
                 </div>
             </div>
             <form onsubmit="return false">
@@ -177,6 +183,38 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="add-goal-modal-close">
+        <div class="goal-form" name="">
+            <div class="title-bar">
+                <h2>Create goal</h2>
+                <div class="buttons">
+                    <!-- <i class="fas fa-trash" onclick="deleteTask(this)" id="delete"></i>
+                    <i class="fas fa-pen" onclick="editViewForm()" id="edit"></i> -->
+                    <i class="fas fa-xmark" onclick="closeGoalCreateForm()" id="close"></i>
+                </div>
+            </div>
+            <form onsubmit="return false">
+                <div class="input-fields">
+                    <label for="goal-name-c">Goal: </label>
+                    <input type="text" id="goal-name-c">
+                </div>
+                <div class="input-fields">
+                    <label for="goal-deadline-c">Deadline: </label>
+                    <input type="datetime-local" id="goal-deadline-c">
+                </div>
+                <div class="sub-goals-nav">                    
+                    <h2>Sub Goals: </h2>
+                    <div class="subgoal-ops">                    
+                        <button class="subgoal-ops-button" onclick="addSubGoal(this)"><i class="fas fa-plus"></i></button>
+                        <button class="subgoal-ops-button" onclick="removeSubGoal(this)"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="input-fields sub-goals-list">
+                    <input type="text"/>
+                </div>
+            </form>
     </section>
 </body>
 </html>

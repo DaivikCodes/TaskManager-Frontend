@@ -182,7 +182,7 @@ function clearNewTaskForm(){
 
 let currentTask = {id: "", url: "", title: "", desc: "", tag: ""}
 
-function openViewForm(e){
+function openTaskViewForm(e){
     // store the task details in variables: id, url, title, desc, tag for ease of use
     let id = e.id;
     let url = e.children[0].src;
@@ -304,7 +304,7 @@ function saveChanges(){
                 <p>${currentTask.desc}</p>
             </div>
             <div class="tags ${currentTask.tag}"><div class="text">${currentTask.tag}</div></div>`;
-        closeViewForm();
+        closeTaskViewForm();
     }
 }
 
@@ -318,12 +318,12 @@ function deleteTask(e){
         task_container.removeChild(document.getElementById(currentTask.id));
 
         // closing the View form
-        closeViewForm();
+        closeTaskViewForm();
         return
     }
 }
 
-function closeViewForm(){
+function closeTaskViewForm(){
     // change the class of View form from open to closed
     const viewTaskSec = document.getElementById("view-task-modal");
     viewTaskSec.className = "view-task-modal-close";
@@ -414,6 +414,33 @@ goals.forEach((ele,ind) =>{
         goalsProgress.children[3].className = "value";
     }
 })
+
+
+function addSubGoal(e){
+    let form = e.parentNode.parentNode.parentNode;
+    console.log(e,"\n",form);
+    let subGoals = form.children[3];
+    console.log(subGoals);
+    subGoals.innerHTML += `<input type="text"/>`;
+}
+
+function removeSubGoal(e){
+    let form = e.parentNode.parentNode.parentNode;
+    console.log(e,"\n",form);
+    let subGoals = form.children[3];
+    if(subGoals.children.length > 1)
+        subGoals.removeChild(subGoals.lastChild);
+}
+
+function closeGoalCreateForm(){
+    let goalsForm = document.querySelector(".add-goal-modal");
+    goalsForm.className = "add-goal-modal-close";
+}
+
+function openGoalForm(){
+    let goalsForm = document.querySelector(".add-goal-modal-close");
+    goalsForm.className = "add-goal-modal";
+}
 
 //================================= Script Starts here =================================
 
