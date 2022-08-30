@@ -415,18 +415,18 @@ goals.forEach((ele,ind) =>{
     }
 })
 
+//================================= Creating Goal start =================================
 
 function addSubGoal(e){
-    let form = e.parentNode.parentNode.parentNode;
-    console.log(e,"\n",form);
+    let form = e.parentNode.parentNode.parentNode;    
     let subGoals = form.children[3];
-    console.log(subGoals);
-    subGoals.innerHTML += `<input type="text"/>`;
+    
+    subGoals.insertAdjacentHTML("beforeend", `<input type="text"/>` );
 }
 
 function removeSubGoal(e){
     let form = e.parentNode.parentNode.parentNode;
-    console.log(e,"\n",form);
+    
     let subGoals = form.children[3];
     if(subGoals.children.length > 1)
         subGoals.removeChild(subGoals.lastChild);
