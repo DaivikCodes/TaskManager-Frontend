@@ -24,6 +24,13 @@ nav{
     gap: 20px;
     align-items: center;
 }
+.create-form-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
 .menu-container a{
     text-decoration: none;
     color: white;
@@ -35,7 +42,7 @@ nav{
     font-size: 1.5rem;
     font-weight: 500;
 }
-nav .add-task{
+nav .add-task, nav .add-goal{
     background-color: rgb(155, 155, 255);
     padding: 5px;
     color:  rgb(255, 255, 255);
@@ -478,19 +485,19 @@ nav .add-task{
     align-items: center;
 }
 
-.view-task-modal .task-form .title-bar .buttons #delete{
+.view-task-modal .task-form .title-bar .buttons .delete{
     color: rgb(255, 255, 255);
     font-size: 13px;
     cursor: pointer;
 }
 
-.view-task-modal .task-form .title-bar .buttons #edit{
+.view-task-modal .task-form .title-bar .buttons .edit{
     color: rgb(255, 255, 255);
     font-size: 13px;
     cursor: pointer;
 }
 
-.view-task-modal .task-form .title-bar .buttons #close{
+.view-task-modal .task-form .title-bar .buttons .close{
     color: rgb(255, 255, 255);
     font-size: 1.1rem;
     cursor: pointer;
@@ -749,4 +756,130 @@ nav .add-task{
 }
 .goals .progress .inner-circle .value50::after {
     content: "%";
+}
+
+/* ---------------------------------------- Goals Create Form CSS  ---------------------------------------- */
+
+.add-goal-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0.5);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.add-goal-modal-close{
+    display: none;
+}
+
+.add-goal-modal .goal-form{
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.add-goal-modal .goal-form .title-bar{
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: blue;
+}
+
+.add-goal-modal .goal-form .title-bar h2{
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.add-goal-modal .goal-form .title-bar .buttons{
+    color: rgb(255, 255, 255);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.add-goal-modal .goal-form .title-bar .buttons .delete{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.add-goal-modal .goal-form .title-bar .buttons .edit{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.add-goal-modal .goal-form .title-bar .buttons .close{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.add-goal-modal .goal-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 15px;
+}
+
+.add-goal-modal .goal-form form h2{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.add-goal-modal .goal-form .input-fields{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: top;
+    min-width: 350px;
+    gap: 5px;
+}
+
+.add-goal-modal .goal-form .input-fields label{
+    font-weight: 400;
+    flex: auto;
+    min-width: 75px;
+    max-width: 22%;
+}
+
+.add-goal-modal .goal-form .sub-goals-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-goal-modal .goal-form .sub-goals-nav .subgoal-ops .subgoal-ops-button{
+    padding: 2px 6px;
+    background-color: rgb(56, 56, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.add-goal-modal .goal-form form .sub-goals-list{
+    max-height: 130px;
+    width: fit-content;
+    padding: 10px;
+    position: relative;
+    display: block;
+    overflow-y: scroll;
+    scroll-margin-top: 10px;
+    background-color: rgb(247, 247, 247);
+}
+
+.add-goal-modal .goal-form form .sub-goals-list input{
+    display: block;
+    margin: 0px 5px 10px 5px;
+    width: 100%;
+    position: relative;
 }
